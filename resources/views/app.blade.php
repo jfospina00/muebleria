@@ -28,7 +28,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				@if (Auth::check())
+					<a class="navbar-brand">{{Auth::user()->name}}</a>
+				@else
+					<a class="navbar-brand">Muebleria Prins</a>
+				@endif
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
