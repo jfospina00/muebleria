@@ -26,7 +26,7 @@ class prueba2 extends Controller {
 	{
 		//
 	}
-
+	
 	/**
 	 * Store a newly created resource in storage.
 	 *
