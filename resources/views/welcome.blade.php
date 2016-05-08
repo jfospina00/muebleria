@@ -41,7 +41,7 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum tempora deleniti optio labore ex dolorem temporibus vitae harum qui nesciunt reiciendis provident omnis, beatae nihil aliquam sunt ullam officia! Odio.</p>
 			</div>
 		</div>
 	</body>
