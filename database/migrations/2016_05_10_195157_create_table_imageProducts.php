@@ -12,7 +12,7 @@ class CreateTableImageProducts extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('offers', function(Blueprint $table)
+		Schema::create('imageProducts', function(Blueprint $table)
 		{
 			$table->increments('id');
 			//Foreign Key
@@ -24,7 +24,7 @@ class CreateTableImageProducts extends Migration {
 	}
 	public function down()
 	{
-		Schema::drop('offers');
+		Schema::drop('imageProducts');
 	}
 
 }

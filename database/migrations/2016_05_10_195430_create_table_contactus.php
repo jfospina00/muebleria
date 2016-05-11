@@ -20,7 +20,7 @@ class CreateTableContactus extends Migration {
 			$table->integer('telephone');
 			$table->integer('cellphone');
 			$table->string('address');
-			$table->email('email');
+			$table->string('email');
 			$table->text('message');
 			$table->timestamps();
 		});
