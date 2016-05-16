@@ -40,19 +40,35 @@
 				</div>
 			</div>
 		</nav>
-		<div class="col-md-12 border">
+		<h1 class="text-center">Muebleria Prins</h1>
+		<div class="col-md-12">
 			<nav id="navbar-w" class="navbar navbar-default ">
 				<div class="container-fluid">
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="col-md-5 col-md-offset-4" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="{{ url('/auth/login') }}">Ingresar</a></li>
-							<li><a href="{{ url('/auth/register') }}">Registrar</a></li>
+							<li><a href="">Ofertas</a></li>
+							<li><a href="">Productos</a></li>
+							<li><a href="">Resdes Sociales</a></li>
+							<li><a href="">Contacténos</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</div>
+	<footer class="footer box-none mbgc-3 color-3 sfont-1 caviar">
+		<div class="container text-center">
+			<div class="col-md-12 text-center">
+				<div class="col-md-4"></div>
+				<div class="col-md-4 text-center">
+					<div class="logo-footer"></div>
+				</div>	
+				<div class="col-md-4"></div>
+			</div>
+			<!-- <h4>Muebleria Prins</h4> -->
+			<p> &copyTodos los Derechos Reservados Manizales - Colombia {{ date("Y")}}</p>
+		</div>
+	</footer>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
