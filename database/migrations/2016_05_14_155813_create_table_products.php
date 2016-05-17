@@ -19,6 +19,9 @@ class CreateTableProducts extends Migration {
 			$table->string('material');
 			$table->text('description_product');
 
+			$table->integer('category_id')->unsigned();
+  			$table->foreign('category_id')->references('id')->on('categories');
+
 			$table->integer('offer_id')->unsigned();
   			$table->foreign('offer_id')->references('id')->on('offers');
 

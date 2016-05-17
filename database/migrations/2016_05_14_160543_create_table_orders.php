@@ -15,7 +15,6 @@ class CreateTableOrders extends Migration {
 		Schema::create('orders', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name_position');
 			$table->double('total_priece');
 			//Foreign Key
 			$table->integer('state_id')->unsigned();
