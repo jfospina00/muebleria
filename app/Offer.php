@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model {
 
-	protected $table = 'offer';
+	protected $table = 'offers';
 
 	protected $fillable = ['name_offer','description_offer','discount','start_date','finish_date'];
 
