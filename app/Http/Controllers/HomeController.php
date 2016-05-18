@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
-
+use App\Offer;
+use App\Product;
 class HomeController extends Controller {
 
 	/*
@@ -29,8 +30,10 @@ class HomeController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
-		return view('home');
+	{	
+		$offers = Offer::all();
+		$produs = Offer::all();
+		return view('home',['offers'=>$offers, 'produs'=>$produs]);
 	}
 
 }
