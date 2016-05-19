@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Auth;
 use App\Offer;
 use App\Product;
 class HomeController extends Controller {
@@ -32,7 +33,8 @@ class HomeController extends Controller {
 	public function index()
 	{	
 		$offers = Offer::all();
-		$produs = Offer::all();
+		$produs = Product::all();
+
 		return view('home',['offers'=>$offers, 'produs'=>$produs]);
 	}
 
