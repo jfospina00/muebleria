@@ -7,12 +7,12 @@
 	<title>Muebleria Prins</title>
 	<link href="{{ asset('/css/app.css') }}"     rel="stylesheet">
 	<link href="{{ asset('/css/welcome.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style.css') }}"   rel="stylesheet">
+	<link href="{{ asset('/css/style2.css') }}"   rel="stylesheet">
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="col-md-12">
+	<div id="img-ppal" class="col-md-12">
 		<nav id="navbar-w" class="navbar navbar-default ">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -40,21 +40,24 @@
 				</div>
 			</div>
 		</nav>
-		<h1 class="text-center">Muebleria Prins</h1>
+		<h1 id="ms" class="text-center color1">Muebleria Prins</h1>
 		<div class="col-md-12">
 			<nav id="navbar-w" class="navbar navbar-default ">
 				<div class="container-fluid">
-					<div class="col-md-5 col-md-offset-4" id="bs-example-navbar-collapse-1">
+					<div class="col-md-6 col-md-offset-3 text-center" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="">Ofertas</a></li>
-							<li><a href="">Productos</a></li>
-							<li><a href="">Resdes Sociales</a></li>
-							<li><a href="">Contacténos</a></li>
+							<li class="op-menu color1"><a class="color1">Ofertas</a></li>
+							<li class="op-menu color1"><a class="color1">Productos</a></li>
+							<li class="op-menu color1"><a class="color1">Resdes Sociales</a></li>
+							<li class="op-menu color1"><a class="color1">Contacténos</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
+	</div>
+	<div class="col-md-12">
+		
 	</div>
 	<footer class="footer box-none mbgc-3 color-3 sfont-1 caviar">
 		<div class="container text-center">
