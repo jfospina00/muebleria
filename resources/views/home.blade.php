@@ -23,14 +23,13 @@
 					<li><a class="col-md-3">lorem4</a></li>
 				</ul>
 			</div> -->
-
 			<div class="col-md-12 col-md-offset- text-center">
 				@foreach ($produs as $product)
 					<div class="col-md-3 border">
 						<div class="text-center " style="height: 200px;">
 							{{ $product->description_product }}
 						</div>
-						<h5>nombre producto</h5>
+						<h5>{{ $product->category->category_name }}</h5>
 					</div>
 				@endforeach
 			</div>

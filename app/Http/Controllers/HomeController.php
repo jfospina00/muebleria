@@ -2,6 +2,7 @@
 use Auth;
 use App\Offer;
 use App\Product;
+use App\User;
 class HomeController extends Controller {
 
 	/*
@@ -34,8 +35,9 @@ class HomeController extends Controller {
 	{	
 		$offers = Offer::all();
 		$produs = Product::all();
+		$users  = User::all();
 
-		return view('home',['offers'=>$offers, 'produs'=>$produs]);
+		return view('home',['offers'=>$offers, 'produs'=>$produs, 'users'=>$users]);
 	}
 
 }
