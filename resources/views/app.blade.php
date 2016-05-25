@@ -41,6 +41,25 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Inicio</a></li>
+					@if (Auth::check())
+						{{-- role 2 client --}}
+						@if (Auth::user()->role == 2)
+							<li><a href="{{ url('/') }}">Ofertas</a></li>
+							<li><a href="{{ url('/') }}">Productos</a></li>
+							<li><a href="{{ url('/') }}">Mis Pedidos</a></li>
+							@if (Auth::user()->last_name == '' ||
+								 Auth::user()->telephone == '' ||
+								 Auth::user()->cellphone == '' ||
+								 Auth::user()->email     == '')
+								<li>
+									<a></a>
+								</li>
+							@endif
+						@else
+						{{-- role 1 admin--}}
+							hola administrador
+						@endif
+					@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -64,8 +83,8 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<!-- <script src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
-	<script src="{{ asset('/js/bootstrap.min.js') }}"></script> -->
+	<script src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('/js/scripts.js') }}"></script>
 </body>
 </html>
