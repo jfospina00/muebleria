@@ -24,10 +24,14 @@ class CreateUsersTable extends Migration {
 			$table->string('email')->unique();
 			
 			$table->string('password', 60);
+
+			// $table->integer('state_id')->unsigned()->unable;
+  			//$table->foreign('state_id')->references('id')->on('states');
+
 			$table->rememberToken();
 			$table->timestamps();
 		});
-	}
+	}	
 
 	/**
 	 * Reverse the migrations.
