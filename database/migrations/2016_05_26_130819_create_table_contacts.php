@@ -3,13 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableContactus extends Migration {
+class CreateTableContacts extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
 	public function up()
 	{
 		Schema::create('contacts', function(Blueprint $table)
@@ -28,7 +23,7 @@ class CreateTableContactus extends Migration {
 
 	public function down()
 	{
-		Schema::drop('contactus');
+		Schema::drop('contacts');
 	}
 
 }

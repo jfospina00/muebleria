@@ -3,6 +3,7 @@ use Auth;
 use App\Offer;
 use App\Product;
 use App\User;
+use Session;
 class HomeController extends Controller {
 
 	/*
@@ -42,8 +43,9 @@ class HomeController extends Controller {
 			if(Auth::user()->telephone == '') $count++;
 			if(Auth::user()->cellphone == '') $count++;
 			if(Auth::user()->address   == '') $count++;
+			Session::put('count_field',$count);
+			return view('home',['offers'=>$offers, 'produs'=>$produs, 'users'=>$users]);
 		}
-		return view('home',['offers'=>$offers, 'produs'=>$produs, 'users'=>$users, 'count'=>$count]);
 	}
 
 }

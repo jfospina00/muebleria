@@ -63,10 +63,12 @@ class UserController extends Controller {
 	public function update(Request $request, $id)
 	{
 		$user = User::find($id);
+        $user->name      = $request->get('name');
         $user->last_name = $request->get('last_name');
         $user->telephone = $request->get('telephone');
         $user->cellphone = $request->get('cellphone');
         $user->address   = $request->get('address');
+        $user->role      = 2;
 		$user->save();
         return redirect('home');
 	}

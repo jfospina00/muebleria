@@ -4,6 +4,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
+			<?php 
+				$count = Session::get('count_field')
+			?>
 			@if (!$count == 0)
 				<div class="alert alert-danger">
 					<h5 class="text-center">
@@ -11,7 +14,7 @@
 						<span class="sr-only"></span>
 						Atención!! Tienes <strong>{{ $count }}</> campos sin registrar en tu perfil
 						<strong>Recuerda que para poder realizar un pedido, debes completar toda la información del perfil.</strong>
-						<a href="{{ url('user/'.Auth::user()->id.'/edit') }}" class="alert-link">Modificar Perfil</a>
+						<a href="{{ url('user/'.Auth::user()->id.'/modify') }}" class="alert-link">Modificar Perfil</a>
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -26,7 +29,7 @@
 						<div class="text-center"">
 							{{ $product->description_product }}
 						</div>
-						<h5 style="">{{ $product->category->category_name }}</h5>
+						<h5 style="">{{ $product->category->name_category }}</h5>
 					</div>
 				@endforeach
 			</div>
