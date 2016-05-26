@@ -22,6 +22,12 @@ Route::resource('user', 'UserController');
 Route::get('order', 'OrderController@index');
 Route::resource('order', 'OrderController');
 
+Route::get('product', 'ProductController@index');
+Route::resource('product', 'ProductController');
+
+Route::get('offer', 'OfferController@index');
+Route::resource('offer', 'OfferController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -43,16 +43,20 @@
 					@if (Auth::check())
 						@if (Auth::user()->role == 2)
 							{{-- role 2 client --}}
-							<li><a href="{{ url('oders') }}">Ofertas</a></li>
-							<li><a href="{{ url('products') }}">Productos</a></li>
+							<li><a href="{{ url('offer') }}">Ofertas</a></li>
+							<li><a href="{{ url('product') }}">Productos</a></li>
+							<?php 
+								$count = Session::get('count_field')
+							?>
 							@if ($count == 0)
-								<li><a href="{{ url('order/create') }}" class="">Mis Pedidos</a></li>
-							@endif
+								<li><a href="{{ url('order') }}" class="">Mis Pedidos</a></li>
+							@else
 								<li>
 									<a id="link-morders">
 										Mis Pedidos <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
 									</a>
 								</li>
+							@endif
 						@else
 							{{-- role 1 admin--}}
 							<li><a href="{{ url('/') }}">Cliente</a></li>
@@ -82,8 +86,8 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<!-- <script src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
-	<script src="{{ asset('/js/bootstrap.min.js') }}"></script> -->
+	<script src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('/js/scripts.js') }}"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-	<?php
+<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableImageProducts extends Migration {
+class CreaTableImagesProducts extends Migration {
 
 	/**
 	 * Run the migrations.
