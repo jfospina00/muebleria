@@ -4,32 +4,29 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<!-- <div class="panel panel-default">
-				<div class="panel-heading">Home</div>
-				<div class="panel-body">
-					Bienvenido! <label for=""> {{Auth::user()->name}} </label><br>
-					Ofertas {{ count($offers) }} <br>
-					Productos {{ count($produs) }}<br>
-					<a href="{{ url('order/create') }}">Realizar Pedido</a>
+			@if (!$count == 0)
+				<div class="alert alert-danger">
+					<h5 class="text-center">
+						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>	
+						<span class="sr-only"></span>
+						Atención!! Tienes <strong>{{ $count }}</> campos sin registrar en tu perfil
+						<strong>Recuerda que para poder realizar un pedido, debes completar toda la información del perfil.</strong>
+						<a href="{{ url('user/'.Auth::user()->id.'/edit') }}" class="alert-link">Modificar Perfil</a>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</h5>
 				</div>
-			</div> -->
-			<h2 class="text-center">!Nuestros Productos!</h2>
+			@endif
+			<h2 class="text-center">¡Nuestros Productos!</h2>
 			<p class="text-center">Los mas hermosos muebles los puedes encontrar aquí, nosotros somos los encargados de hacerte llegar el prodcuto sin costo de envio</p>
-			<!-- <div class="col-md-4 col-md-offset-4 text-center ">
-				<ul class="list-unstyled list-inline">
-					<li><a class="col-md-3">lorem1</a></li>
-					<li><a class="col-md-3">lorem2</a></li>
-					<li><a class="col-md-3">lorem3</a></li>
-					<li><a class="col-md-3">lorem4</a></li>
-				</ul>
-			</div> -->
-			<div class="col-md-12 col-md-offset- text-center">
+			<div id="product-home" class="col-md-12 col-md-offset- text-center">
 				@foreach ($produs as $product)
-					<div class="col-md-3 border">
-						<div class="text-center " style="height: 200px;">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<div class="text-center"">
 							{{ $product->description_product }}
 						</div>
-						<h5>{{ $product->category->category_name }}</h5>
+						<h5 style="">{{ $product->category->category_name }}</h5>
 					</div>
 				@endforeach
 			</div>
