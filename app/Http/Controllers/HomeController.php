@@ -36,8 +36,14 @@ class HomeController extends Controller {
 		$offers = Offer::all();
 		$produs = Product::all();
 		$users  = User::all();
-
-		return view('home',['offers'=>$offers, 'produs'=>$produs, 'users'=>$users]);
+		if(Auth::check()){
+			$count = 0;
+			if(Auth::user()->last_name == '') $count++;
+			if(Auth::user()->telephone == '') $count++;
+			if(Auth::user()->cellphone == '') $count++;
+			if(Auth::user()->address   == '') $count++;
+		}
+		return view('home',['offers'=>$offers, 'produs'=>$produs, 'users'=>$users, 'count'=>$count]);
 	}
 
 }

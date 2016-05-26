@@ -7,8 +7,7 @@
 	<title>Muebleria Prins</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style2.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/style.css') }}" rel="stylesheet">	
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -42,22 +41,22 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Inicio</a></li>
 					@if (Auth::check())
-						{{-- role 2 client --}}
 						@if (Auth::user()->role == 2)
-							<li><a href="{{ url('/') }}">Ofertas</a></li>
-							<li><a href="{{ url('/') }}">Productos</a></li>
-							<li><a href="{{ url('/') }}">Mis Pedidos</a></li>
-							@if (Auth::user()->last_name == '' ||
-								 Auth::user()->telephone == '' ||
-								 Auth::user()->cellphone == '' ||
-								 Auth::user()->email     == '')
-								<li>
-									<a></a>
-								</li>
+							{{-- role 2 client --}}
+							<li><a href="{{ url('oders') }}">Ofertas</a></li>
+							<li><a href="{{ url('products') }}">Productos</a></li>
+							@if ($count == 0)
+								<li><a href="{{ url('order/create') }}" class="">Mis Pedidos</a></li>
 							@endif
+								<li>
+									<a id="link-morders">
+										Mis Pedidos <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+									</a>
+								</li>
 						@else
-						{{-- role 1 admin--}}
-							hola administrador
+							{{-- role 1 admin--}}
+							<li><a href="{{ url('/') }}">Cliente</a></li>
+							<li><a href="{{ url('/') }}">Administrador</a></li>
 						@endif
 					@endif
 				</ul>
@@ -70,7 +69,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('user/modify') }}">Cambiar perfil</a></li>
+								<li><a href="{{ url('user/'.Auth::user()->id.'/modify') }}">Cambiar perfil</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Salir</a></li>
 							</ul>
 						</li>
@@ -83,8 +82,8 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
-	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+	<!-- <script src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script> -->
 	<script src="{{ asset('/js/scripts.js') }}"></script>
 </body>
 </html>
