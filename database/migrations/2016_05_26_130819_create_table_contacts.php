@@ -13,7 +13,7 @@ class CreateTableContacts extends Migration {
 			$table->string('first_name');
 			$table->string('last_name');
 			$table->integer('telephone');
-			$table->integer('cellphone');
+			$table->double('cellphone');
 			$table->string('address');
 			$table->string('email');
 			$table->text('message');

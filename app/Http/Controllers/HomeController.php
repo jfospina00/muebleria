@@ -37,6 +37,12 @@ class HomeController extends Controller {
 		$offers = Offer::all();
 		$produs = Product::all();
 		$users  = User::all();
+		if (Auth::user()->role == 0) {
+			$id = Auth::user()->id;
+			$user = User::find($id);
+			$user->role = 2;
+			$user->save();
+		}
 		if(Auth::check()){
 			$count = 0;
 			if(Auth::user()->last_name == '') $count++;
