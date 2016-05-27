@@ -4,9 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Auth;
-use App\User;
-class UserController extends Controller {
+
+class ClientController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,12 +14,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		if (Auth::user()->role == 1) {
-			// return view('users.list');
-			echo "Admin";
-		}else{
-			echo "cliente";
-		}
+		//
 	}
 
 	/**
@@ -54,9 +48,15 @@ class UserController extends Controller {
 		//
 	}
 
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
 	public function edit($id)
-	{	$user = User::find($id);
-		return view('users.modify',['user'=>$user]);
+	{
+		//
 	}
 
 	/**
@@ -65,17 +65,9 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Request $request, $id)
+	public function update($id)
 	{
-		$user = User::find($id);
-        $user->name      = $request->get('name');
-        $user->last_name = $request->get('last_name');
-        $user->telephone = $request->get('telephone');
-        $user->cellphone = $request->get('cellphone');
-        $user->address   = $request->get('address');
-        $user->role      = 2;
-		$user->save();
-        return redirect('home');
+		//
 	}
 
 	/**

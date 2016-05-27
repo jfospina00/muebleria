@@ -19,7 +19,7 @@ class CreateTableUsers extends Migration {
 			$table->string('name');
 			$table->string('last_name');
 			$table->integer('telephone');
-			$table->integer('cellphone');
+			$table->double('cellphone');
 			$table->string('address');
 			$table->string('email')->unique();
 			

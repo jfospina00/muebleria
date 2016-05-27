@@ -41,7 +41,8 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Inicio</a></li>
 					@if (Auth::check())
-						@if (Auth::user()->role == 2)
+						@if (Auth::user()->role == 0 ||
+							 Auth::user()->role == 2)
 							{{-- role 2 client --}}
 							<li><a href="{{ url('offer') }}">Ofertas</a></li>
 							<li><a href="{{ url('product') }}">Productos</a></li>
@@ -59,8 +60,8 @@
 							@endif
 						@else
 							{{-- role 1 admin--}}
-							<li><a href="{{ url('/') }}">Cliente</a></li>
-							<li><a href="{{ url('/') }}">Administrador</a></li>
+							<li><a href="{{ url('user') }}">Cliente</a></li>
+							<li><a href="{{ url('administration') }}">Administrador</a></li>
 						@endif
 					@endif
 				</ul>

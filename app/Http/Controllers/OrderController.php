@@ -4,7 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Session;
 use Auth;
+use App\Order;
 
 class OrderController extends Controller {
 
@@ -14,41 +16,44 @@ class OrderController extends Controller {
 	}
 	public function index()
 	{
-		if(Auth::check())
-		{
-			if(Auth::user()->role == 2)
-			{	
-				$count = 0;
-				if(Auth::user()->last_name == '') $count++;
-				if(Auth::user()->telephone == '') $count++;
-				if(Auth::user()->cellphone == '') $count++;
-				if(Auth::user()->address   == '') $count++;
-				$count;
-				if($count == 0 )
-					return view('orders.list');
-				else		
-					return redirect('home');
+		if(Auth::user()->role == 1){
+			$orders = Order::all();	
+			return view('orders.list',['orders'=>$orders]);
+		}
+		if(Auth::user()->role == 2){	
+			$id = Auth::user()->id;
+			$order = Order::all()->where('user_id', $id)
+								->where('state_id', 3);
+
+			$orderR = Order::all()->where('user_id', $id)
+								  ->where('state_id', 4);
+			$count = Session::get('count_field');
+			if($count == 0){
+				return view('orders.list',['order'=>$order, 'orderR'=>$orderR]);
 			}
+			else{
+				return redirect('home');
+			}
+		}
+		else{
+			return redirect('logout');
 		}
 	}
 
 	public function create()
 	{
-		if(Auth::check())
-		{
-			if(Auth::user()->role == 2)
-			{	
-				$count = 0;
-				if(Auth::user()->last_name == '') $count++;
-				if(Auth::user()->telephone == '') $count++;
-				if(Auth::user()->cellphone == '') $count++;
-				if(Auth::user()->address   == '') $count++;
-				$count;
-				if($count == 0 )
-					return view('orders.create');
-				else		
-					return redirect('home');
-			}
+		if(Auth::user()->role == 2)
+		{	
+			$count = 0;
+			if(Auth::user()->last_name == '') $count++;
+			if(Auth::user()->telephone == '') $count++;
+			if(Auth::user()->cellphone == '') $count++;
+			if(Auth::user()->address   == '') $count++;
+			$count;
+			if($count == 0 )
+				return view('orders.create');
+			else		
+				return redirect('home');
 		}
 	}
 
