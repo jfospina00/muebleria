@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableOffer extends Migration {
+class CreateTableOffers extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -16,12 +16,14 @@ class CreateTableOffer extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name_offer');
-			$table->text('description_offer');
+			$table->string('description_offer');
 			$table->integer('discount');
 			$table->date('start_date');
 			$table->date('finish_date');
 			$table->timestamps();
+
 		});
+
 	}
 	public function down()
 	{

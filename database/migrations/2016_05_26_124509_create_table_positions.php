@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCategory extends Migration {
+class CreateTablePositions extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +12,21 @@ class CreateTableCategory extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('categories', function(Blueprint $table)
+		Schema::create('positions', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('category_name');
+			$table->string('name_position');
+			$table->string('tittle_position');
+			$table->text('message_position');
 			$table->timestamps();
-		});
-	}
 
+		});
+
+	}
 	public function down()
 	{
-		Schema::drop('categories');
+		Schema::drop('positions');
 	}
 
 }
+

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class CreateTableUsers extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->string('name');
 			$table->string('last_name');
 			$table->integer('telephone');
-			$table->integer('cellphone');
+			$table->double('cellphone');
 			$table->string('address');
 			$table->string('email')->unique();
 			

@@ -7,8 +7,7 @@
 	<title>Muebleria Prins</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style2.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/style.css') }}" rel="stylesheet">	
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -41,6 +40,30 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Inicio</a></li>
+					@if (Auth::check())
+						@if (Auth::user()->role == 0 ||
+							 Auth::user()->role == 2)
+							{{-- role 2 client --}}
+							<li><a href="{{ url('offer') }}">Ofertas</a></li>
+							<li><a href="{{ url('product') }}">Productos</a></li>
+							<?php 
+								$count = Session::get('count_field')
+							?>
+							@if ($count == 0)
+								<li><a href="{{ url('order') }}" class="">Mis Pedidos</a></li>
+							@else
+								<li>
+									<a id="link-morders">
+										Mis Pedidos <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+									</a>
+								</li>
+							@endif
+						@else
+							{{-- role 1 admin--}}
+							<li><a href="{{ url('user') }}">Cliente</a></li>
+							<li><a href="{{ url('administration') }}">Administrador</a></li>
+						@endif
+					@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -51,7 +74,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('user/modify') }}">Cambiar perfil</a></li>
+								<li><a href="{{ url('user/'.Auth::user()->id.'/modify') }}">Cambiar perfil</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Salir</a></li>
 							</ul>
 						</li>

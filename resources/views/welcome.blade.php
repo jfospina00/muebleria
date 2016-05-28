@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Muebleria Prins</title>
 	<link href="{{ asset('/css/app.css') }}"     rel="stylesheet">
+	<link href="{{ asset('/css/style.css') }}"   rel="stylesheet">
 	<link href="{{ asset('/css/welcome.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/style2.css') }}"   rel="stylesheet">
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>

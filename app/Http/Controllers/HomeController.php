@@ -2,6 +2,8 @@
 use Auth;
 use App\Offer;
 use App\Product;
+use App\User;
+use Session;
 class HomeController extends Controller {
 
 	/*
@@ -34,8 +36,22 @@ class HomeController extends Controller {
 	{	
 		$offers = Offer::all();
 		$produs = Product::all();
-
-		return view('home',['offers'=>$offers, 'produs'=>$produs]);
+		$users  = User::all();
+		if (Auth::user()->role == 0) {
+			$id = Auth::user()->id;
+			$user = User::find($id);
+			$user->role = 2;
+			$user->save();
+		}
+		if(Auth::check()){
+			$count = 0;
+			if(Auth::user()->last_name == '') $count++;
+			if(Auth::user()->telephone == '') $count++;
+			if(Auth::user()->cellphone == '') $count++;
+			if(Auth::user()->address   == '') $count++;
+			Session::put('count_field',$count);
+			return view('home',['offers'=>$offers, 'produs'=>$produs, 'users'=>$users]);
+		}
 	}
 
 }
