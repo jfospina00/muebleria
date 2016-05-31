@@ -9,7 +9,7 @@
 /* Letters Colors*/
 .color1{ color: #fff!important; }
 /* ================================== Especific ===================================== */
-/* Menu*/
+/* Menu normal*/
 .op-menu{
 	background: rgba(0, 0, 0, 0.1);
 	border: 1px solid #fff!important;
@@ -28,6 +28,20 @@
 }
 .op-menu:hover a{
 	padding: 5px 20px!important;
+}
+/* Home admin*/
+nav#menu-admin{
+	background-color:rgba(2555, 2555, 2555, 0.0);
+	border:none;
+}
+nav#menu-admin div.container-fluid div.collapse ul.nav{
+	/* border: 1px solid blue!important; */
+	display:block!important; 
+	margin:0px auto!important;
+	width: 100%!important;
+}
+li.op-menu-admin{
+	width:20%;
 }
 /* Home*/
 #product-home div div { height: 200px; }

@@ -17,7 +17,7 @@ class OrderController extends Controller {
 	public function index()
 	{
 		if(Auth::user()->role == 1){
-			$orders = Order::all();	
+			$orders = Order::all()->where('state_id', 3);
 			return view('orders.list',['orders'=>$orders]);
 		}
 		if(Auth::user()->role == 2){	

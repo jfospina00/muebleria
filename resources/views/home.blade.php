@@ -1,12 +1,27 @@
 @extends('app')
 
 @section('content')
+
 <div class="container">
+	@if (Auth::user()->role == 1)
+	<nav id="menu-admin" class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav text-center">
+					<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('order') }}">Pedidos</a></li>
+					<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('user') }}">Clientes</a></li>
+					<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('product') }}">Productos</a></li>
+					<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('offer') }}">Ofertas</a></li>
+					<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('position') }}">Anuncios</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	@endif
 	<div class="row">
 		<div class="col-md-12">
-			<?php 
-				$count = Session::get('count_field')
-			?>
+		@if (Auth::user()->role == 2)
+			<?php $count = Session::get('count_field')?>
 			@if (!$count == 0)
 				<div class="alert alert-danger">
 					<h5 class="text-center">
@@ -34,6 +49,7 @@
 				@endforeach
 			</div>
 		</div>	
+		@endif
 	</div>
 </div>
 @endsection
