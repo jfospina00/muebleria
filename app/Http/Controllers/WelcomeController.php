@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
-
+use App\Product;
+use App\Offer;
+use Auth;	
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +32,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$offers = Offer::where('id','!=',1)->get();
+		$produs = Product::all();
+
+		return view('welcome',['offers'=>$offers,'produs'=> $produs]);
 	}
 
 }
