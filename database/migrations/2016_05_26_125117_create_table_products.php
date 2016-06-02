@@ -17,6 +17,7 @@ class CreateTableProducts extends Migration {
 			$table->increments('id');
 			$table->string('name_product');
 			$table->string('material');
+			$table->integer('price');
 			$table->text('description_product');
 
 			$table->integer('category_id')->unsigned();

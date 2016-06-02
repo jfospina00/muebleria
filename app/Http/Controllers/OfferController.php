@@ -4,9 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Auth;
+use App\Offer;
 use App\User;
-class UserController extends Controller {
+use Auth;
+
+class OfferController extends Controller {
 	
 	public function __construct()
 	{
@@ -19,12 +21,8 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		if (Auth::user()->role == 1) {
-			$users = User::all();
-			return view('users.list',['users'=>$users]);
-		}else{
-			return view('home');
-		}
+		$offers = Offer::where('id','!=',1)->get();
+		return view('offers.list', ['offers'=>$offers]);
 	}
 
 	/**
@@ -42,9 +40,18 @@ class UserController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$offer = new Offer;
+		
+		$offer->name_offer        = $request->get('name_offer');
+		$offer->description_offer = $request->get('description_offer');
+		$offer->discount          = $request->get('discount');
+		$offer->start_date        = $request->get('start_date');
+		$offer->finish_date       = $request->get('finish_date');
+		// $offer->state_id = ?;
+		$offer->save();
+		return redirect('offer');
 	}
 
 	/**
@@ -53,14 +60,22 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(request $request)
 	{
-		//
+		$id    = $request->get('id');
+		$offer = Offer::find($id);
+        return view('offers.show',['offer'=>$offer]);
 	}
 
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
 	public function edit($id)
-	{	$user = User::find($id);
-		return view('users.modify',['user'=>$user]);
+	{
+		//
 	}
 
 	/**
@@ -69,17 +84,9 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Request $request, $id)
+	public function update($id)
 	{
-		$user = User::find($id);
-        $user->name      = $request->get('name');
-        $user->last_name = $request->get('last_name');
-        $user->telephone = $request->get('telephone');
-        $user->cellphone = $request->get('cellphone');
-        $user->address   = $request->get('address');
-        $user->role      = 2;
-		$user->save();
-        return redirect('home');
+		//
 	}
 
 	/**

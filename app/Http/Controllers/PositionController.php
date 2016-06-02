@@ -4,42 +4,28 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Session;
-use Auth;
-use App\Order;
 
-class OrderController extends Controller {
-
+class PositionController extends Controller {
+	
 	public function __construct()
 	{
 		$this->middleware('auth');
 	}
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
 	public function index()
 	{
-		if(Auth::user()->role == 1){
-			$orders = Order::all()->where('state_id', 3);
-			return view('orders.list',['orders'=>$orders]);
-		}
-		if(Auth::user()->role == 2){	
-			$id = Auth::user()->id;
-			$order = Order::all()->where('user_id', $id)
-								->where('state_id', 3);
-
-			$orderR = Order::all()->where('user_id', $id)
-								  ->where('state_id', 4);
-			$count = Session::get('count_field');
-			if($count == 0){
-				return view('orders.list',['order'=>$order, 'orderR'=>$orderR]);
-			}
-			else{
-				return redirect('home');
-			}
-		}
-		else{
-			return redirect('logout');
-		}
+		//
 	}
 
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
 	public function create()
 	{
 		//
