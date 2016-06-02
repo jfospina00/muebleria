@@ -8,6 +8,10 @@
 /* ==================================== Class ======================================= */
 /* Letters Colors*/
 .color1{ color: #fff!important; }
+/* Background Colors*/
+.background1 { background-color: rgba(0, 0, 0, 0.7)!important; }
+/* Effect */
+.transition{ transition: all .5s; }
 /* ================================== Especific ===================================== */
 /* Menu normal*/
 .op-menu{

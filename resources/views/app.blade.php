@@ -84,6 +84,19 @@
 		</div>
 	</nav>
 	@yield('content')
+	<footer class="footer background1 color1">
+		<div class="container text-center">
+			<div class="col-md-12 text-center">
+				<div class="col-md-4"></div>
+				<div class="col-md-4 text-center">
+					<div class="logo-footer"></div>
+				</div>	
+				<div class="col-md-4"></div>
+			</div>
+			<!-- <h4>Muebleria Prins</h4> -->
+			<p> &copyTodos los Derechos Reservados Manizales - Colombia {{ date("Y")}}</p>
+		</div>
+	</footer>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>

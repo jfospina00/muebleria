@@ -34,7 +34,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{	
-		$offers = Offer::all();
+		$offers = Offer::where('id','!=',1)->get();
 		$produs = Product::all();
 		$users  = User::all();
 		if (Auth::user()->role == 0) {

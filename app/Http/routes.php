@@ -26,6 +26,8 @@ Route::get('product', 'ProductController@index');
 Route::resource('product', 'ProductController');
 
 Route::get('offer', 'OfferController@index');
+Route::get('offer', 'OfferController@index');
+Route::post('/offer/show','OfferController@show');
 Route::resource('offer', 'OfferController')
 ;
 

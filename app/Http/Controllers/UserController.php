@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 class UserController extends Controller {
-
+	
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -16,10 +20,10 @@ class UserController extends Controller {
 	public function index()
 	{
 		if (Auth::user()->role == 1) {
-			// return view('users.list');
-			echo "Admin";
+			$users = User::all();
+			return view('users.list',['users'=>$users]);
 		}else{
-			echo "cliente";
+			return view('home');
 		}
 	}
 

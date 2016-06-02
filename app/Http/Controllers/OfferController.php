@@ -4,9 +4,16 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Offer;
+use App\User;
+use Auth;
 
 class OfferController extends Controller {
-
+	
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -14,7 +21,8 @@ class OfferController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$offers = Offer::where('id','!=',1)->get();
+		return view('offers.list', ['offers'=>$offers]);
 	}
 
 	/**
@@ -32,9 +40,18 @@ class OfferController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$offer = new Offer;
+		
+		$offer->name_offer        = $request->get('name_offer');
+		$offer->description_offer = $request->get('description_offer');
+		$offer->discount          = $request->get('discount');
+		$offer->start_date        = $request->get('start_date');
+		$offer->finish_date       = $request->get('finish_date');
+		// $offer->state_id = ?;
+		$offer->save();
+		return redirect('offer');
 	}
 
 	/**
@@ -43,9 +60,11 @@ class OfferController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(request $request)
 	{
-		//
+		$id    = $request->get('id');
+		$offer = Offer::find($id);
+        return view('offers.show',['offer'=>$offer]);
 	}
 
 	/**

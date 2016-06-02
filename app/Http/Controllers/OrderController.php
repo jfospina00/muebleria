@@ -42,19 +42,7 @@ class OrderController extends Controller {
 
 	public function create()
 	{
-		if(Auth::user()->role == 2)
-		{	
-			$count = 0;
-			if(Auth::user()->last_name == '') $count++;
-			if(Auth::user()->telephone == '') $count++;
-			if(Auth::user()->cellphone == '') $count++;
-			if(Auth::user()->address   == '') $count++;
-			$count;
-			if($count == 0 )
-				return view('orders.create');
-			else		
-				return redirect('home');
-		}
+		//
 	}
 
 	/**

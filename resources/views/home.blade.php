@@ -47,6 +47,36 @@
 						<h5 style="">{{ $product->category->name_category }}</h5>
 					</div>
 				@endforeach
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<a class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12" href="{{ url('product') }}">Ver Más Productos</a>
+				</div>
+			</div>
+			<h2 class="text-center">¡Ofertas!</h2>
+			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda praesentium et quisquam necessitatibus fugiat temporibus eveniet consectetur nihil quam porro blanditiis cum id labore quo aliquid, eos nisi! Nihil, odit.</p>
+			<div id="product-home" class="col-md-12 col-md-offset- text-center">
+			<!-- <div id="offer-home" class="col-md-12 col-md-offset- text-center"> -->
+				@foreach ($offers as $offer)
+					@if (count($offers) >= 4)
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+					@endif
+					@if (count($offers) == 3)
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					@endif
+					@if (count($offers) == 2)
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					@endif
+					@if (count($offers) == 1)
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					@endif
+						<div class="text-center"">
+							{{ $offer->description_offer }}
+						</div>
+						<h5 style="">{{ $offer->name_offer }}</h5>
+					</div>
+				@endforeach
+				<div class="col-md-12">
+					<a class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12" href="{{ url('offer') }}">Ver Más Ofertas</a>
+				</div>
 			</div>
 		</div>	
 		@endif
