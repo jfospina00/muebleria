@@ -15,7 +15,11 @@ class CreateTableOrders extends Migration {
 		Schema::create('orders', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('total_priece');
+			$table->double('total');
+			$table->double('subtotal');
+			$table->double('unit_price');
+			$table->double('discount_price');
+			$table->integer('quatity');
 			//Timestamps
 			$table->timestamps();
 		});

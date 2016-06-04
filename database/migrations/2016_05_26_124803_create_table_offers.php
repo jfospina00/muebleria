@@ -16,7 +16,9 @@ class CreateTableOffers extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name_offer');
+			$table->string('name_real_offer');
 			$table->string('description_offer');
+			$table->string('type_offer');
 			$table->integer('discount');
 			$table->date('start_date');
 			$table->date('finish_date');
