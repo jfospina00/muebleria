@@ -37,3 +37,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::get('prueba1','prueba2@prueba1');
+Route::get('prueba2','prueba2@prueba2');

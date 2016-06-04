@@ -4,7 +4,16 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\Category;
+use App\Contact;
+use App\ImageProduct;
+use App\Notification;
+use App\Offer;
+use App\Order;
+use App\Position;
+use App\Product;
+use App\State;
+use App\User;
 class prueba2 extends Controller {
 
 	/**
@@ -14,7 +23,7 @@ class prueba2 extends Controller {
 	 */
 	public function index()
 	{
-		//
+		
 	}
 
 	/**
@@ -81,4 +90,17 @@ class prueba2 extends Controller {
 		//
 	}
 
+	public function prueba1()
+	{
+		$query = Category::all();
+		foreach ($query as $q) {
+			echo $q->name_category;
+			echo $q->product.'<br><br>';
+		}
+	}
+	public function prueba2()
+	{
+		$query = Offer::all();
+		echo $query;
+	}
 }

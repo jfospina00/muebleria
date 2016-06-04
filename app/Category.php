@@ -10,6 +10,6 @@ class Category extends Model {
 
 	public function product()
 	{
-		return $this->hasOne('App\Product','id');
+		return $this->hasMany('App\Product','id');
 	}
 }
