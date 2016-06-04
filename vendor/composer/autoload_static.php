@@ -210,14 +210,16 @@ class ComposerStaticInitd4338211afc1e3882027df1ff29dd7d9
     );
 
     public static $classMap = array (
-        'Contacts' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_130819_create_table_contacts.php',
         'CreaTableImagesProducts' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_131251_crea_table_imagesProducts.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_130537_create_password_resets_table.php',
         'CreateTableCategories' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_124330_create_table_categories.php',
+        'CreateTableContacts' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_130819_create_table_contacts.php',
+        'CreateTableForeingKeys' => __DIR__ . '/../..' . '/database/migrations/2016_06_03_192142_create_table_foreing_keys.php',
         'CreateTableOffers' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_124803_create_table_offers.php',
         'CreateTableOrders' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_125740_create_table_orders.php',
         'CreateTablePositions' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_124509_create_table_positions.php',
         'CreateTableProducts' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_125117_create_table_products.php',
+        'CreateTableProductsToOffers' => __DIR__ . '/../..' . '/database/migrations/2016_06_03_191922_create_table_productsToOffers.php',
         'CreateTableStates' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_123636_create_table_states.php',
         'CreateTableUsers' => __DIR__ . '/../..' . '/database/migrations/2016_05_26_125629_create_table_users.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

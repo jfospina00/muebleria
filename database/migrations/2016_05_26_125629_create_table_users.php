@@ -25,9 +25,6 @@ class CreateTableUsers extends Migration {
 			
 			$table->string('password', 60);
 
-			// $table->integer('state_id')->unsigned()->unable;
-  			//$table->foreign('state_id')->references('id')->on('states');
-
 			$table->rememberToken();
 			$table->timestamps();
 		});

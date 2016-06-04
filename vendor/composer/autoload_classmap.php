@@ -6,14 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Contacts' => $baseDir . '/database/migrations/2016_05_26_130819_create_table_contacts.php',
     'CreaTableImagesProducts' => $baseDir . '/database/migrations/2016_05_26_131251_crea_table_imagesProducts.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2016_05_26_130537_create_password_resets_table.php',
     'CreateTableCategories' => $baseDir . '/database/migrations/2016_05_26_124330_create_table_categories.php',
+    'CreateTableContacts' => $baseDir . '/database/migrations/2016_05_26_130819_create_table_contacts.php',
+    'CreateTableForeingKeys' => $baseDir . '/database/migrations/2016_06_03_192142_create_table_foreing_keys.php',
     'CreateTableOffers' => $baseDir . '/database/migrations/2016_05_26_124803_create_table_offers.php',
     'CreateTableOrders' => $baseDir . '/database/migrations/2016_05_26_125740_create_table_orders.php',
     'CreateTablePositions' => $baseDir . '/database/migrations/2016_05_26_124509_create_table_positions.php',
     'CreateTableProducts' => $baseDir . '/database/migrations/2016_05_26_125117_create_table_products.php',
+    'CreateTableProductsToOffers' => $baseDir . '/database/migrations/2016_06_03_191922_create_table_productsToOffers.php',
     'CreateTableStates' => $baseDir . '/database/migrations/2016_05_26_123636_create_table_states.php',
     'CreateTableUsers' => $baseDir . '/database/migrations/2016_05_26_125629_create_table_users.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
