@@ -45,6 +45,7 @@ class OfferController extends Controller {
 		$offer = new Offer;
 		
 		$offer->name_offer        = $request->get('name_offer');
+		$offer->name_real_offer   = $request->get('name_real_offer');
 		$offer->description_offer = $request->get('description_offer');
 		$offer->discount          = $request->get('discount');
 		$offer->start_date        = $request->get('start_date');

@@ -89,7 +89,7 @@
 							@foreach ($products as $product)
 								<tr>
 									<td class="text-center">{{ $product->category->name_category }}</td>
-									<td class="text-center">{{-- $product->price --}} Precio Pendiente</td>
+									<td class="text-center">{{ $product->price }}</td>
 									<td class="text-center">{{ $product->material }}</td>
 									<td class="text-center">{{ $product->description_product }}</td>
 									<td class="text-center">{{ $product->state_id }}</td>

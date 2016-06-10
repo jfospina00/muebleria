@@ -26,8 +26,8 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						@if (Auth::guest())
-							<li><a href="{{ url('/auth/login') }}">Ingresar</a></li>
-							<li><a href="{{ url('/auth/register') }}">Registrar</a></li>
+							<li class="op-menu"><a id="btn-login" href="{{ url('/auth/login') }}">Ingresar</a></li>
+							<li class="op-menu"><a id="btn-register" href="{{ url('/auth/register') }}">Registrar</a></li>
 						@else
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -60,8 +60,8 @@
 	{{--=========================================== Content ===========================================--}}
 	{{-- Section Products --}}
 	<div class="col-md-12">
-		<h1 class="text-center">¡Nuestros Productos!</h1>
-		<p class="text-center">Los mas hermosos muebles los puedes encontrar aquí, nosotros somos los encargados de hacerte llegar el prodcuto sin costo de envio</p>
+		<h1 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">¡Nuestros Productos!</h1>
+		<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Los mas hermosos muebles los puedes encontrar aquí, nosotros somos los encargados de hacerte llegar el prodcuto sin costo de envio</p>
 		<div id="product-home" class="col-md-12 text-center">
 			@foreach ($produs as $product)
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -76,8 +76,8 @@
 			</div>
 		</div>
 	{{-- Section Offers --}}
-		<h1 class="text-center">¡Ofertas!</h1>
-		<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda praesentium et quisquam necessitatibus fugiat temporibus eveniet consectetur nihil quam porro blanditiis cum id labore quo aliquid, eos nisi! Nihil, odit.</p>
+		<h1 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">¡Ofertas!</h1>
+		<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda praesentium et quisquam necessitatibus fugiat temporibus eveniet consectetur nihil quam porro blanditiis cum id labore quo aliquid, eos nisi! Nihil, odit.</p>
 		<div id="product-home" class="col-md-12 col-md-offset- text-center">
 		<!-- <div id="offer-home" class="col-md-12 col-md-offset- text-center"> -->
 			@foreach ($offers as $offer)
@@ -105,7 +105,7 @@
 		</div>
 
 	</div>
-	<footer class="footer box-none mbgc-3 color-3 sfont-1 caviar">
+	<footer class="footer box-none mbgc-3 color-3 sfont-1 caviar ">
 		<div class="container text-center">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 				<div class="col-xs-4 col-sm-4 col-md-12 col-lg-12"></div>

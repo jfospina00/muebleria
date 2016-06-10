@@ -52,7 +52,8 @@ class ProductController extends Controller {
 		$product->state_id            = 1;
 		$product->offer_id            = $request->get('offer_id');
 		$product->material            = $request->get('material');
-		// $product->price            = $request->get('price');
+		$product->price               = $request->get('price');
+		$product->imageProduct_id     = 1;
 		$product->category_id         = $request->get('category_id');
 		$product->description_product = $request->get('description_product');
 

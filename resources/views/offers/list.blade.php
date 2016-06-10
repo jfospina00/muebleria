@@ -31,9 +31,12 @@
 							<div class="col-md-3">
 								<input type="text" class="form-control" name="name_offer" placeholder="Ejemplo: 2x1">
 							</div>
-							<label class="col-md-1 control-label">Descripción</label>
+							<label class="col-md-1 control-label">Tipo de Oferta</label>
 							<div class="col-md-3">
-								<textarea name="description_offer" class="form-control"" placeholder="Ejemplo:Lleve dos pague uno"></textarea>
+								<select name="name_real_offer" class="form-control">
+									<option value="1">Promoción</option>
+									<option value="2">Descuento</option>
+								</select>
 							</div>
 							<label class="col-md-1 control-label">Descuento</label>
 							<div class="col-md-3">
@@ -43,12 +46,16 @@
 					</div>
 					<div class="col-md-12">
 						<div class="form-group ">
-							<label class="col-md-2 control-label">Fecha Inicio de Oferta</label>
-							<div class="col-md-4">
+							<label class="col-md-1 control-label">Descripción</label>
+							<div class="col-md-3">
+								<textarea name="description_offer" class="form-control"" placeholder="Ejemplo:Lleve dos pague uno"></textarea>
+							</div>
+							<label class="col-md-1 control-label">Fecha Inicio de Oferta</label>
+							<div class="col-md-3">
 								<input type="date" class="form-control" name="start_date" placeholder="Ejemplo: 2x1">
 							</div>
-							<label class="col-md-2 control-label">Fecha Fin de Oferta</label>
-							<div class="col-md-4">
+							<label class="col-md-1 control-label">Fecha Fin de Oferta</label>
+							<div class="col-md-3">
 								<input type="date" class="form-control" name="finish_date" placeholder="Ejemplo: 2x1">
 							</div>
 						</div>
@@ -68,6 +75,7 @@
 					<thead>
 						<tr>
 							<th class="text-center">Oferta</th>
+							<th class="text-center">Tipo Oferta</th>
 							<th class="text-center">Descripción</th>
 							<th class="text-center">Descuento</th>
 							<th class="text-center">Fecha Inicio Descuento</th>
@@ -79,6 +87,7 @@
 						@foreach ($offers as $offer)
 							<tr>
 								<td class="text-center">{{ $offer->name_offer }}</td>
+								<td class="text-center">@if ($offer->name_real_offer == 1) Promoción @else Descuento @endif</td>
 								<td class="text-center">{{ $offer->description_offer }}</td>
 								<td class="text-center">{{ $offer->discount }}%</td>
 								<td class="text-center">{{ substr($offer->start_date,0,11 ) }}</td>

@@ -29,12 +29,12 @@ class CreateTableForeingKeys extends Migration {
 
 		});
 		// Foreign Users
-		Schema::table("users",function(Blueprint $table){
+		// Schema::table("users",function(Blueprint $table){
 
-			$table->integer('state_id')->unsigned()->unable();
-  			$table->foreign('state_id')->references('id')->on('states');
+		// 	$table->integer('state_id')->unsigned()->unable();
+  // 			$table->foreign('state_id')->references('id')->on('states');
 
-		});
+		// });
 		// Foreign Orders
 		Schema::table("orders",function(Blueprint $table){
 
@@ -49,7 +49,7 @@ class CreateTableForeingKeys extends Migration {
 
 		});
 		// Foreign ProductsToOffers
-		Schema::table("users",function(Blueprint $table){
+		Schema::table("productsToOffers",function(Blueprint $table){
 
 			$table->integer('product_id')->unsigned();
   			$table->foreign('product_id')->references('id')->on('products');
