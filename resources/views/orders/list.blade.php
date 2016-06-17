@@ -9,7 +9,7 @@
 					<div class="container-fluid">
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav text-center">
-								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('order') }}">Pedidos</a></li>
+								<li class="text-center op-menu-admin"><a class="text-center activeMenu" href="{{ url('order') }}">Pedidos</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('user') }}">Clientes</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('product') }}">Productos</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('offer') }}">Ofertas</a></li>
@@ -48,7 +48,7 @@
 			@if (Auth::user()->role == 2)
 
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<a id="btn-createOrder" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 btn btn-success">Nuevo Pedido</a>
+					<a href="{{ url('neworder') }}" id="btn-createOrder" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 btn btn-success" ><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Nuevo Pedido</a>
 				</div>
 				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><label>{{ Auth::user()->name }} {{ Auth::user()->last_name }}</label></div>
 				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><label>Pedidos Pendientes: <strong>{{ count($order)}}</strong></label></div>

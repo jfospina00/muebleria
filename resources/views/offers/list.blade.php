@@ -11,66 +11,68 @@
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('order') }}">Pedidos</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('user') }}">Clientes</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('product') }}">Productos</a></li>
-								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('offer') }}">Ofertas</a></li>
+								<li class="text-center op-menu-admin"><a class="text-center activeMenu" href="{{ url('offer') }}">Ofertas</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('position') }}">Anuncios</a></li>
 							</ul>
 						</div>
 					</div>
 				</nav>
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<button id="show-form" class="btn btn-success">Nueva Oferta</button>
+				{{-- =========================== Modal =========================== --}}
+				<div class="modal fade" id="newOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document" id="content-modal">
+						<div class="modal-content">
+							<div class="modal-body">
+								<h3 class="text-center">Nueva Oferta <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></h3>
+								<form id="form" class="transition" action="{{ url('offer') }}" method="post" enctype="multipart/form-data">
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
+									<div class="form-group ">
+										<label class=" control-label">Oferta</label>
+										<div>
+											<input type="text" class="form-control" name="name_offer" placeholder="Ejemplo: 2x1">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class=" control-label">Tipo de Oferta</label>
+										<select name="name_real_offer" class="form-control">
+											<option value="1">Promoción</option>
+											<option value="2">Descuento</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class=" control-label">Descuento</label>
+										<div class="">
+											<input type="number" class="form-control" name="discount" placeholder="Ejemplo:10">
+										</div>
+									</div>
+									
+									<div class="form-group ">
+										<label class=" control-label">Descripción</label>
+										<div class="">
+											<textarea name="description_offer" class="form-control"" placeholder="Ejemplo:Lleve dos pague uno"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class=" control-label">Fecha Inicio de Oferta</label>
+										<div class="">
+											<input type="date" class="form-control" name="start_date">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class=" control-label">Fecha Fin de Oferta</label>
+										<div class="">
+											<input type="date" class="form-control" name="finish_date">
+										</div>
+									</div>
+									<button class="btn btn-success " type="input">Agregar</button>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
-				<form id="form" class="transition" action="{{ url('offer') }}" method="post" enctype="multipart/form-data">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					
-					<h3 class="text-center">Nueva Oferta</h3>
-
-					<div class="col-md-12">
-						<div class="form-group ">
-							<label class="col-md-1 control-label">Oferta</label>
-							<div class="col-md-3">
-								<input type="text" class="form-control" name="name_offer" placeholder="Ejemplo: 2x1">
-							</div>
-							<label class="col-md-1 control-label">Tipo de Oferta</label>
-							<div class="col-md-3">
-								<select name="name_real_offer" class="form-control">
-									<option value="1">Promoción</option>
-									<option value="2">Descuento</option>
-								</select>
-							</div>
-							<label class="col-md-1 control-label">Descuento</label>
-							<div class="col-md-3">
-								<input type="number" class="form-control" name="discount" placeholder="Ejemplo:10">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="form-group ">
-							<label class="col-md-1 control-label">Descripción</label>
-							<div class="col-md-3">
-								<textarea name="description_offer" class="form-control"" placeholder="Ejemplo:Lleve dos pague uno"></textarea>
-							</div>
-							<label class="col-md-1 control-label">Fecha Inicio de Oferta</label>
-							<div class="col-md-3">
-								<input type="date" class="form-control" name="start_date" placeholder="Ejemplo: 2x1">
-							</div>
-							<label class="col-md-1 control-label">Fecha Fin de Oferta</label>
-							<div class="col-md-3">
-								<input type="date" class="form-control" name="finish_date" placeholder="Ejemplo: 2x1">
-							</div>
-						</div>
-					</div>
-					<br>
-					<br>
-					<br>
-					<br>
-					<div class="col-md-6 col-md-offset-3">
-						<button class="btn btn-success col-md-12" type="input">Agregar</button>
-					</div>
-					<div class="col-md-12">
-						<hr>
-					</div>
-				</form>
+				{{-- =========================== Modal =========================== --}}
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<button id="btn-newOffer" class="btn btn-success">Nueva Oferta</button>
+				</div>
 				<table class="table">
 					<thead>
 						<tr>

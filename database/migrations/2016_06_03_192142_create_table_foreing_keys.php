@@ -21,9 +21,6 @@ class CreateTableForeingKeys extends Migration {
 			$table->integer('offer_id')->unsigned();
   			$table->foreign('offer_id')->references('id')->on('offers');
 
-  			$table->integer('imageProduct_id')->unsigned();
-  			$table->foreign('imageProduct_id')->references('id')->on('imageProducts');
-
   			$table->integer('state_id')->unsigned();
   			$table->foreign('state_id')->references('id')->on('states');
 

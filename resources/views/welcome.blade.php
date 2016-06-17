@@ -42,7 +42,7 @@
 		</nav>
 		<h1 id="ms" class="text-center color1">Muebleria Prins</h1>
 		{{--========================================== Sub-Menu ==========================================--}}
-		<div class="ol-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<nav id="navbar-w" class="navbar navbar-default ">
 				<div class="container-fluid">
 					<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-2 col-md-offset-3 col-lg-offset-3 " id="bs-example-navbar-collapse-1">
@@ -65,9 +65,10 @@
 		<div id="product-home" class="col-md-12 text-center">
 			@foreach ($produs as $product)
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<div class="text-center"">
+					<p class="text-center">
 						{{ $product->description_product }}
-					</div>
+					</p>
+					<img class="wTotal hTotal" src="{{ asset('images/imagesProducts/'.$product->imageProduct1) }}" alt="">
 					<h5 style="">{{ $product->category->name_category }}</h5>
 				</div>
 			@endforeach
@@ -93,7 +94,7 @@
 				@if (count($offers) == 1)
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 				@endif
-					<div class="text-center"">
+					<div class="text-center">
 						{{ $offer->description_offer }}
 					</div>
 					<h5 style="">{{ $offer->name_offer }}</h5>

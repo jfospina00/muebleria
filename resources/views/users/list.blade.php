@@ -9,7 +9,7 @@
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav text-center">
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('order') }}">Pedidos</a></li>
-								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('user') }}">Clientes</a></li>
+								<li class="text-center op-menu-admin"><a class="text-center activeMenu" href="{{ url('user') }}">Clientes</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('product') }}">Productos</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('offer') }}">Ofertas</a></li>
 								<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('position') }}">Anuncios</a></li>
