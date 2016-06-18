@@ -10,7 +10,7 @@
 						<div class="container-fluid">
 							<div class="collapse navbar-collapse">
 								<ul class="nav navbar-nav text-center">
-									<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('order') }}">Pedidos</a></li>
+									<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('order') }}">Pedido</a></li>
 									<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('user') }}">Clientes</a></li>
 									<li class="text-center op-menu-admin"><a class="text-center activeMenu" href="{{ url('product') }}">Muebles</a></li>
 									<li class="text-center op-menu-admin"><a class="text-center" href="{{ url('offer') }}">Ofertas</a></li>
