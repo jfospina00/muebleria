@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Session;
 use Auth;
 use App\Order;
+use App\Offer;
+use App\Product;
 
 class OrderController extends Controller {
 
@@ -42,7 +44,9 @@ class OrderController extends Controller {
 
 	public function create()
 	{
-		//
+		$offers  = Offer::all();
+		$products = Product::all();
+		return view('orders.create',['offers'=>$offers, 'products'=>$products]);
 	}
 
 	/**

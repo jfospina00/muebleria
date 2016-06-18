@@ -19,6 +19,11 @@ class CreateTableProducts extends Migration {
 			$table->string('material');
 			$table->integer('price');
 			$table->text('description_product');
+			$table->text('imageProduct1');;
+			$table->text('imageProduct2')->nullable();
+			$table->text('imageProduct3')->nullable();
+			$table->text('imageProduct4')->nullable();
+			$table->text('imageProduct5')->nullable();
 			$table->timestamps();
 		});
 	}

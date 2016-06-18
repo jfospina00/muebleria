@@ -20,7 +20,8 @@ Route::get('user/{id}/modify', 'UserController@edit');
 Route::resource('user', 'UserController');
 
 Route::get('order', 'OrderController@index');
-Route::resource('order', 'OrderController');
+Route::resource('order/', 'OrderController');
+Route::resource('neworder/', 'OrderController@create');
 
 Route::get('product', 'ProductController@index');
 Route::resource('product', 'ProductController');
